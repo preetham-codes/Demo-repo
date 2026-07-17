@@ -12,7 +12,8 @@ jobs:
         run: echo "Hello World"
 
   # Second job (indented properly under 'jobs')
-  echo-goodbye:
+  echo-goodbye: 
+    needs: Hello-World
     runs-on: ubuntu-latest
     steps:
       - name: say goodbye
