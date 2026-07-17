@@ -10,14 +10,18 @@ jobs:
     steps:
       - name: Hello World
         run: echo "Hello World"
+        
+      # Context reference step (aligned with the first step)
+      - name: Event name
+        run: echo "Event name:${{ github.event_name }}"
 
-  # Second job (indented properly under 'jobs')
+  # Second job (runs only after Hello-World completes successfully)
   echo-goodbye: 
     needs: Hello-World
     runs-on: ubuntu-latest
     steps:
       - name: say goodbye
-        run: echo "Goodbye" # Added missing closing quote
+        run: echo "Goodbye"
 
       # Multiple commands using the pipe (|) symbol
       - name: Multi-line bash
