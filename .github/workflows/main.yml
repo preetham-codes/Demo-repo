@@ -29,3 +29,12 @@ jobs:
           echo "I am"
           echo "Multi Line"
           echo "Script"
+
+  # Third job (indented properly under 'jobs')
+  windows-echo:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: windows-latest
+    steps: 
+      - name: show OS
+        shell: bash
+        run: echo "The job is running on windows runner"
