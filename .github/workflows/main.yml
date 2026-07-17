@@ -11,15 +11,16 @@ jobs:
       - name: Hello World
         run: echo "Hello World"
 
-#second job
- echo-goodbye:
-  runs-on: ubuntu-slim
-  steps:
-  - name: say goodbye
-    run: echo "Goodbye
-  #multiple commands
-  - name: Multi-line bash
-  run:
-   echo: " I am"
-   echo: "Multi Line"
-   echo: "Script"
+  # Second job (indented properly under 'jobs')
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say goodbye
+        run: echo "Goodbye" # Added missing closing quote
+
+      # Multiple commands using the pipe (|) symbol
+      - name: Multi-line bash
+        run: |
+          echo "I am"
+          echo "Multi Line"
+          echo "Script"
