@@ -10,3 +10,16 @@ jobs:
     steps:
       - name: Hello World
         run: echo "Hello World"
+
+#second job
+ echo-goodbye:
+  runs-on: ubuntu-slim
+  steps:
+  - name: say goodbye
+    run: echo "Goodbye
+  #multiple commands
+  - name: Multi-line bash
+  run:
+   echo: " I am"
+   echo: "Multi Line"
+   echo: "Script"
